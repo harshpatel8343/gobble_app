@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "264646201770",
+    "project_id": "gobble-567b2",
+    "storage_bucket": "gobble-567b2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264646201770:android:84b4dc45fcf979c69c9bd3",
+        "android_client_info": {
+          "package_name": "com.example.gobble_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264646201770-86rp6f720817f82hriv2qhlvhvhn47m5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB68ZUVwDAwwyxrwJQnJFOr-vsoP5RFZ_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264646201770-86rp6f720817f82hriv2qhlvhvhn47m5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

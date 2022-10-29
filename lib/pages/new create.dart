@@ -2,21 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gobble_1/login.dart';
 
-class Create extends StatefulWidget {
-  const Create({Key? key}) : super(key: key);
+
+class create1 extends StatefulWidget {
+  const create1({Key? key}) : super(key: key);
 
   @override
-  State<Create> createState() => _CreateState();
-
-  void onSubmit(String mail) {}
+  State<create1> createState() => _create1State();
 }
 
-class _CreateState extends State<Create> {
-  final _formKey = GlobalKey<FormState>();
-
-
-
-
+class _create1State extends State<create1> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,13 +35,12 @@ class _CreateState extends State<Create> {
               ),
               child: SingleChildScrollView(
                 child: Form(
-                  key: _formKey,
                   child: Column(
                     children: [
                       TextFormField(
 
                         decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.mail),
+                            prefixIcon: Icon(Icons.mail),
                             hintText: 'Email ID',
                             filled: true,
                             fillColor: Colors.brown[50],
@@ -119,7 +112,7 @@ class _CreateState extends State<Create> {
                           ],
                         ),
                       )
-                     ],
+                    ],
                   ),
                 ),
               ),

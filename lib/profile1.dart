@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gobble_1/pages/UI.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:gobble_1/login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 
 class Profile extends StatefulWidget {
@@ -23,15 +26,17 @@ class _ProfileState extends State<Profile> {
           children: [
             Container(
               padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.15,left: 15,right: 15),
+
               child:Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(child: Icon(Icons.person),
+                      CircleAvatar(backgroundImage: NetworkImage('FirebaseAuth.instance.currentUser!.photoURL!'),
                       radius:35,
-                        backgroundColor: Colors.brown,
+                        //backgroundColor: Colors.brown,
                       )
                     ],
                   ),
@@ -42,7 +47,7 @@ class _ProfileState extends State<Profile> {
                     )),
                   ),
                   SizedBox(height: 5),
-                  Text('Harsh',
+                  Text(FirebaseAuth.instance.currentUser!.displayName!,
                     style:GoogleFonts.alfaSlabOne(textStyle: TextStyle(
                       fontSize: 20,fontWeight: FontWeight.normal,color: Colors.brown,
                     )),
@@ -66,7 +71,7 @@ class _ProfileState extends State<Profile> {
                     )),
                   ),
                   SizedBox(height: 5),
-                  Text('8828226025',
+                  Text(FirebaseAuth.instance.currentUser!.phoneNumber!,
                     style:GoogleFonts.alfaSlabOne(textStyle: TextStyle(
                       fontSize: 20,fontWeight: FontWeight.normal,color: Colors.brown,
                     )),
@@ -78,7 +83,7 @@ class _ProfileState extends State<Profile> {
                     )),
                   ),
                   SizedBox(height: 5),
-                  Text('harshpatel12@gmail.com',
+                  Text(FirebaseAuth.instance.currentUser!.email!,
                     style:GoogleFonts.alfaSlabOne(textStyle: TextStyle(
                       fontSize: 20,fontWeight: FontWeight.normal,color: Colors.brown,
                     )),
@@ -91,7 +96,7 @@ class _ProfileState extends State<Profile> {
                         padding: const EdgeInsets.fromLTRB(0,0,30,0),
                         child: FloatingActionButton(onPressed: (){
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context)=>Login()),
+                              builder: (context)=>UI()),
                           );
                         },
                           backgroundColor: Colors.brown[800],
@@ -103,8 +108,11 @@ class _ProfileState extends State<Profile> {
                   )
                 ],
               ) ,
+
             ),
+
           ],
+
         ),
       ),
     );

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:gobble_1/authentication.dart';
 import 'package:gobble_1/login.dart';
 import 'package:lottie/lottie.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+
 
 
 class Home extends StatefulWidget {
@@ -49,7 +53,7 @@ class _HomeState extends State<Home> {
                     padding: const EdgeInsets.fromLTRB(0,0,30,0),
                     child: FloatingActionButton(onPressed: (){
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context)=>Login()),
+                          builder: (context)=>AuthService().handleAuthState()),
                       );
                     },
                       backgroundColor: Colors.brown[800],
@@ -69,11 +73,14 @@ class _HomeState extends State<Home> {
 
 
 
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: Home(),
+  ),
+  );
+}
 
 
-
-void main() => runApp(MaterialApp(
-  debugShowCheckedModeBanner: false,
-  home: Home(),
-
-));
