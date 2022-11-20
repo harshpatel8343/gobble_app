@@ -1,10 +1,11 @@
+
 import 'package:flutter/material.dart';
-import 'package:gobble_1/authentication.dart';
-import 'package:gobble_1/login.dart';
+import 'package:gobble_1/Services/authentication.dart';
+import 'package:gobble_1/Services/google_sign_in.dart';
 import 'package:lottie/lottie.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_core/firebase_core.dart';
-
+import 'package:provider/provider.dart';
 
 
 
@@ -18,6 +19,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -73,14 +75,15 @@ class _HomeState extends State<Home> {
 
 
 
-void main() async {
+Future <void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Home(),
-  ),
-  );
+  runApp(ChangeNotifierProvider(
+    create: (context) => GoogleSignInProvider(),
+    child: MaterialApp(
+      home: Home(),
+      debugShowCheckedModeBanner: false,
+    ),
+  ));
 }
-
 

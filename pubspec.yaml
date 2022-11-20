@@ -29,13 +29,18 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-   lottie: ^1.4.3
-   firebase_auth: ^1.1.4
-   google_sign_in: ^5.0.3
-   google_nav_bar: ^5.0.6
-   google_fonts: ^3.0.1
-   font_awesome_flutter: ^9.0.0
-   provider: ^5.0.0
+   lottie:
+   firebase_auth:
+   google_sign_in:
+   quiver:
+   google_nav_bar:
+   google_fonts:
+   font_awesome_flutter:
+   provider:
+   cloud_firestore:
+   http:
+   dependencies:
+   form_field_validator:
    flutter:
     sdk: flutter
 
@@ -56,7 +61,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+#  flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
